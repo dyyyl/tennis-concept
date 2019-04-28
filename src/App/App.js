@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     TweenMax.set(boxRef, { xPercent: -50, yPercent: -50 });
 
-    // Start default spinning animation.
+    // Start default spinning animation for the box.
     TweenMax.fromTo(
       boxRef,
       2,
