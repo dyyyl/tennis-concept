@@ -5,7 +5,7 @@ const Box = styled.div`
   width: 5rem;
   border-radius: 5px;
   background-color: palevioletred;
-  animation: box-spin infinite 10s linear;
+  /* animation: box-spin infinite 10s linear;
 
   @keyframes box-spin {
     from {
@@ -14,7 +14,7 @@ const Box = styled.div`
     to {
       transform: rotate(360deg);
     }
-  }
+  } */
 `;
 
 export default Box;
