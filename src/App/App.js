@@ -1,4 +1,4 @@
-import { TweenMax } from 'gsap';
+import { TweenMax, Linear } from 'gsap';
 import React, { useEffect, useRef } from 'react';
 
 import Box from 'shared/components/Box';
@@ -11,6 +11,19 @@ const App = () => {
 
   useEffect(() => {
     TweenMax.set(boxRef, { xPercent: -50, yPercent: -50 });
+
+    // Start default spinning animation.
+    TweenMax.fromTo(
+      boxRef,
+      2,
+      { rotation: 0 },
+      {
+        rotation: 360,
+        repeat: -1,
+        repeatDelay: 0,
+        ease: Linear.easeNone,
+      },
+    );
 
     document.addEventListener('click', (event) => {
       const { clientX, clientY } = event;
