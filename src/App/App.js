@@ -1,6 +1,7 @@
 import { TweenMax, Linear } from 'gsap';
 import React, { useEffect, useRef } from 'react';
 
+import Shuriken from 'shared/components/Shuriken';
 import Box from 'shared/components/Box';
 import Layout from 'shared/components/Layout';
 
@@ -34,7 +35,7 @@ const App = () => {
   return (
     <>
       <Layout>
-        <Box
+        <Shuriken
           ref={(element) => {
             boxRef = element;
           }}
