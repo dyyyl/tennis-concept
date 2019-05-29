@@ -7,6 +7,7 @@ const Title = styled.h1`
   background-color: palevioletred;
   color: palegoldenrod;
   box-shadow: 7px 10px #7cb4cd;
+  padding: 1rem;
 `;
 
 export default Title;
