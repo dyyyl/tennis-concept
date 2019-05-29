@@ -19,9 +19,6 @@ const ShurikenBox = styled.div`
 const Shuriken = ({ position }) => {
   let boxRef = useRef(null);
 
-  // init the animation timeline.
-  const timeline = new TimelineLite();
-
   // Run once
   useEffect(() => {
     TweenLite.set(boxRef, { xPercent: -50, yPercent: -50 });
@@ -29,6 +26,9 @@ const Shuriken = ({ position }) => {
 
   // Run whenever position changes
   useEffect(() => {
+    // init the animation timeline.
+    const timeline = new TimelineLite();
+
     timeline
       .fromTo(
         boxRef,

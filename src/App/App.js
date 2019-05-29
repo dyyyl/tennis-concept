@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+
 import Title from 'shared/components/Title';
 import Shuriken from 'shared/components/Shuriken';
+import Star from 'shared/components/Star';
 import Layout from 'shared/components/Layout';
 
 import GlobalStyle from 'shared/styles/GlobalStyle';
@@ -24,7 +26,9 @@ const App = () => {
   return (
     <>
       <Layout>
-        <Title>s u n s e t s h u r i k e n</Title>
+        <Title>
+          s u n s e t<Star>✫</Star>s h u r i k e n
+        </Title>
         <Shuriken position={position} />
       </Layout>
       <GlobalStyle />
