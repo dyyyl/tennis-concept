@@ -5,6 +5,8 @@ import Shuriken from 'shared/components/Shuriken';
 import Star from 'shared/components/Star';
 import Layout from 'shared/components/Layout';
 
+import moveShuriken from 'shared/helpers/moveShuriken';
+
 import GlobalStyle from 'shared/styles/GlobalStyle';
 
 const App = () => {
@@ -14,13 +16,8 @@ const App = () => {
   });
 
   useEffect(() => {
-    document.addEventListener('click', (event) => {
-      const { clientX, clientY } = event;
-      setPosition({
-        x: clientX,
-        y: clientY,
-      });
-    });
+    document.addEventListener('click', event => moveShuriken(event, setPosition));
+    return document.removeEventListener('click', moveShuriken);
   }, []);
 
   return (
