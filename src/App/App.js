@@ -21,19 +21,47 @@ const App = () => {
     y: window.innerHeight / 4,
   });
 
+  const [topLeftArea, setTopLeftArea] = useState(null);
+  const [topRightArea, setTopRightArea] = useState(null);
+  const [bottomLeftArea, setBottomLeftArea] = useState(null);
+  const [bottomRightArea, setBottomRightArea] = useState(null);
+
   useEffect(() => {
+    setTopLeftArea(topLeftQuadrantRef.current.getBoundingClientRect());
+    setTopRightArea(topRightQuadrantRef.current.getBoundingClientRect());
+    setBottomLeftArea(bottomLeftQuadrantRef.current.getBoundingClientRect());
+    setBottomRightArea(bottomRightQuadrantRef.current.getBoundingClientRect());
     document.addEventListener('click', event => moveShuriken(event, setPosition));
-    console.log(bottomLeftQuadrantRef.current.getBoundingClientRect());
     return document.removeEventListener('click', moveShuriken);
   }, []);
 
   return (
     <>
       <Layout>
-        <Quadrant area="top-left" ref={topLeftQuadrantRef}>wun</Quadrant>
-        <Quadrant area="top-right" ref={topRightQuadrantRef}>too</Quadrant>
-        <Quadrant area="bottom-left" ref={bottomLeftQuadrantRef}>tree</Quadrant>
-        <Quadrant area="bottom-right" ref={bottomRightQuadrantRef}>foah</Quadrant>
+        <Quadrant
+          gridArea="top-left"
+          ref={topLeftQuadrantRef}
+          area={topLeftArea}
+          position={position}
+        />
+        <Quadrant
+          gridArea="top-right"
+          ref={topRightQuadrantRef}
+          area={topRightArea}
+          position={position}
+        />
+        <Quadrant
+          gridArea="bottom-left"
+          ref={bottomLeftQuadrantRef}
+          area={bottomLeftArea}
+          position={position}
+        />
+        <Quadrant
+          gridArea="bottom-right"
+          ref={bottomRightQuadrantRef}
+          area={bottomRightArea}
+          position={position}
+        />
         <Title>
           s u n s e t<Star>✫</Star>s h u r i k e n
         </Title>
