@@ -10,6 +10,11 @@ import moveShuriken from 'shared/helpers/moveShuriken';
 
 import GlobalStyle from 'shared/styles/GlobalStyle';
 
+import Air from 'shared/images/Air.svg';
+import Earth from 'shared/images/Earth.svg';
+import Water from 'shared/images/Water.svg';
+import Fire from 'shared/images/Fire.svg';
+
 const App = () => {
   const topLeftQuadrantRef = useRef(null);
   const topRightQuadrantRef = useRef(null);
@@ -40,27 +45,35 @@ const App = () => {
       <Layout>
         <Quadrant
           gridArea="top-left"
-          ref={topLeftQuadrantRef}
+          passThroughRef={topLeftQuadrantRef}
           area={topLeftArea}
           position={position}
+          element="water"
+          symbol={Water}
         />
         <Quadrant
           gridArea="top-right"
-          ref={topRightQuadrantRef}
+          passThroughRef={topRightQuadrantRef}
           area={topRightArea}
           position={position}
+          element="earth"
+          symbol={Earth}
         />
         <Quadrant
           gridArea="bottom-left"
-          ref={bottomLeftQuadrantRef}
+          passThroughRef={bottomLeftQuadrantRef}
           area={bottomLeftArea}
           position={position}
+          element="fire"
+          symbol={Fire}
         />
         <Quadrant
           gridArea="bottom-right"
-          ref={bottomRightQuadrantRef}
+          passThroughRef={bottomRightQuadrantRef}
           area={bottomRightArea}
           position={position}
+          element="air"
+          symbol={Air}
         />
         <Title>
           s u n s e t<Star>✫</Star>s h u r i k e n
